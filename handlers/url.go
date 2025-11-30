@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/faizan1191/url-shortener/utils"
 	"github.com/faizan1191/url-shortner/storage"
+	"github.com/faizan1191/url-shortner/utils"
 	"github.com/gin-gonic/gin"
 )
 

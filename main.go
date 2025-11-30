@@ -1,6 +1,6 @@
 package main
 
-import "github.com/faizan1191/url-shortener/router"
+import "github.com/faizan1191/url-shortner/router"
 
 func main() {
 	r := router.SetupRouter()

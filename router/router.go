@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/faizan1191/url-shortener/handlers"
-	"github.com/faizan1191/url-shortener/storage"
+	"github.com/faizan1191/url-shortner/handlers"
+	"github.com/faizan1191/url-shortner/storage"
 	"github.com/gin-gonic/gin"
 )
 
