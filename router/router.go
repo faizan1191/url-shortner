@@ -3,11 +3,13 @@ package router
 import (
 	"github.com/faizan1191/url-shortner/handlers"
 	"github.com/faizan1191/url-shortner/storage"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default() // Create Gin router
+	r.Use(cors.Default())
 
 	// Initialize memory store
 	// store := storage.NewMemoryStore()
