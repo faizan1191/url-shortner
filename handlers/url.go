@@ -8,14 +8,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// URLHanlder stores the storage instance
-type URLHanlder struct {
+// URLHandler stores the storage instance
+type URLHandler struct {
 	Store *storage.MemoryStore
 }
 
-// Constructor for URLHanlder
-func NewURLHandler(store *storage.MemoryStore) *URLHanlder {
-	return &URLHanlder{
+// Constructor for URLHandler
+func NewURLHandler(store *storage.MemoryStore) *URLHandler {
+	return &URLHandler{
 		Store: store,
 	}
 }
@@ -26,7 +26,7 @@ type ShortenRequest struct {
 }
 
 // Shorten handler: POST /shorten
-func (h *URLHanlder) Shorten(c *gin.Context) {
+func (h *URLHandler) Shorten(c *gin.Context) {
 	var req ShortenRequest
 
 	// Bind JSON Input
@@ -52,7 +52,7 @@ func (h *URLHanlder) Shorten(c *gin.Context) {
 }
 
 // Redirect handler Get /:code
-func (h *URLHanlder) Redirect(c *gin.Context) {
+func (h *URLHandler) Redirect(c *gin.Context) {
 	code := c.Param("code")
 
 	// Lookup Original URL
