@@ -9,12 +9,23 @@ import (
 )
 
 // URLHandler stores the storage instance
+// type URLHandler struct {
+// 	Store *storage.MemoryStore
+// }
+
+// // Constructor for URLHandler
+// func NewURLHandler(store *storage.MemoryStore) *URLHandler {
+// 	return &URLHandler{
+// 		Store: store,
+// 	}
+// }
+
 type URLHandler struct {
-	Store *storage.MemoryStore
+	Store storage.Store
 }
 
 // Constructor for URLHandler
-func NewURLHandler(store *storage.MemoryStore) *URLHandler {
+func NewURLHandler(store storage.Store) *URLHandler {
 	return &URLHandler{
 		Store: store,
 	}
@@ -29,7 +40,6 @@ type ShortenRequest struct {
 func (h *URLHandler) Shorten(c *gin.Context) {
 	var req ShortenRequest
 
-	// Bind JSON Input
 	// Bind JSON input
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "URL is required"})

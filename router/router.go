@@ -10,7 +10,10 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default() // Create Gin router
 
 	// Initialize memory store
-	store := storage.NewMemoryStore()
+	// store := storage.NewMemoryStore()
+
+	// Initialize redis store
+	store := storage.NewRedisStore("localhost:6379")
 
 	// Initialize URL handler
 	urlHandler := handlers.NewURLHandler(store)
